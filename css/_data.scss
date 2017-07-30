@@ -1,0 +1,46 @@
+#top {
+    form {
+        input {
+            display: none;
+            &:checked {
+                &+ label {
+                    background: #d62175;
+                }
+            }
+        }
+        label {
+            line-height: 40px;
+            padding: 8px;
+            border-radius: 4px;
+            background: #f58dbd;
+            color: #eeeeee;
+        }
+    }
+}
+
+.dataContainer {
+    ul {
+        li.row {
+            ol {
+                &:after {
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+                li.col {
+                    float: left;
+                    width: 25%;
+                    line-height: 32px;
+                }
+            }
+
+            &.title {
+                ol {
+                    li.col {
+                        line-height: 48px;
+                    }
+                }
+            }
+        }
+    }
+}

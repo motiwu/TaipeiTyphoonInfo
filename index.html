@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Untitled Document</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<div id="top">
+    <form id="searchForm" onchange="showData()">
+<!--        <label>區域<input type="radio" name="district"></label>-->
+    </form>
+    <button onclick="refreshApi();">重新整理</button>
+    <div>
 
+    </div>
+</div>
+<div id="dataContainer" class="dataContainer">
+    <ul>
+        <li class="row title">
+            <ol>
+                <li class="col">發生時間</li>
+                <li class="col">區域</li>
+                <li class="col">詳細位置</li>
+                <li class="col">事件描述</li>
+            </ol>
+        </li>
+        <li class="row">
+            <ol>
+                <li class="col">發生時間</li>
+                <li class="col">區域</li>
+                <li class="col">詳細位置</li>
+                <li class="col">事件描述</li>
+            </ol>
+        </li>
+    </ul>
+</div>
 
-
+    <script src="js/data.js"></script>
 </body>
 </html>
