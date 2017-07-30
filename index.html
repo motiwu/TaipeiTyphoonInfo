@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Untitled Document</title>
+    <title>Taipei typhoon info</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -11,6 +11,14 @@
 <!--        <label>區域<input type="radio" name="district"></label>-->
     </form>
     <button onclick="refreshApi();">重新整理</button>
+    <form onchange="showData()">
+        <select id="howShow">
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select>
+    </form>
+
     <div>
 
     </div>
@@ -35,6 +43,13 @@
         </li>
     </ul>
 </div>
+<ul id="pages">
+        <li>prev</li>
+        <li>1</li>
+        <li>2</li>
+        <li>next</li>
+    </ul>
+
 
     <script src="js/data.js"></script>
 </body>

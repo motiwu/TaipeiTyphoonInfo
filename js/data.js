@@ -41,6 +41,11 @@ var dataContent = "";
 var checkedDists;
 var checkedDist;
 
+const pageContainer = document.getElementById("pages");
+var totalPage = 0;
+var currentPage = 1;
+var howShow = 10;
+var arrDistData = [];
 
 function showData() {
     dataTitle = `<ul>
@@ -57,36 +62,34 @@ function showData() {
 
     checkedDists = document.getElementsByName("CaseLocationDistrict");
 
+    howShow = document.getElementById("howShow").value;
+    data = str.DataSet["diffgr:diffgram"].NewDataSet.CASE_SUMMARY;
+    arrDistData = [];
+
+
     for(let i = 0; i < checkedDists.length; i++) {
         if(checkedDists[i].checked) {
             checkedDist = checkedDists[i].value;
 
-                for(let j = 0; j < data.length; j++) {
-                    if(data[j].CaseLocationDistrict == checkedDist || checkedDist == "所有區域") {
-                        dataContent += `<li class="row">
-                                    <ol>
-                                        <li class="col">${data[j].CaseTime}</li>
-                                        <li class="col">${data[j].CaseLocationDistrict}</li>
-                                        <li class="col">${data[j].CaseLocationDescription}</li>
-                                        <li class="col">${data[j].CaseDescription}</li>
-                                    </ol>
-                                </li>`;
-                    }
+            for(let j = 0; j < data.length; j++) {
+                if(data[j].CaseLocationDistrict == checkedDist || checkedDist == "所有區域") {
+                    arrDistData.push(data[j]);
                 }
+            }
+
+            arrDistData = arrDistData.slice(currentPage * howShow - howShow, currentPage * howShow);
+            for(let k = 0; k < arrDistData.length; k++) {
+                            dataContent += `<li class="row">
+                                                <ol>
+                                                    <li class="col">${arrDistData[k].CaseTime}</li>
+                                                    <li class="col">${arrDistData[k].CaseLocationDistrict}</li>
+                                                    <li class="col">${arrDistData[k].CaseLocationDescription}</li>
+                                                    <li class="col">${arrDistData[k].CaseDescription}</li>
+                                                </ol>
+                                            </li>`;
+            }
+
             dataContainer.innerHTML = `${dataTitle}${dataContent}</ul>`;
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

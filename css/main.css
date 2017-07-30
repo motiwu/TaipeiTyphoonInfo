@@ -83,4 +83,19 @@ table {
 .dataContainer ul li.row.title ol li.col {
   line-height: 48px; }
 
+/* line 49, E:/git/TaipeiTyphoonInfo/css/_data.scss */
+#pages:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+/* line 54, E:/git/TaipeiTyphoonInfo/css/_data.scss */
+#pages li {
+  float: left;
+  margin: 4px;
+  padding: 4px 8px;
+  color: #eeeeee;
+  background: #404040;
+  border-radius: 4px; }
+
 /*# sourceMappingURL=main.css.map */
