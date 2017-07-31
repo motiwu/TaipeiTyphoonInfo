@@ -7,11 +7,11 @@
 </head>
 <body>
 <div id="top">
-    <form id="searchForm" onchange="showData()">
+    <form id="searchForm" onchange="showData(-1000)">
 <!--        <label>區域<input type="radio" name="district"></label>-->
     </form>
     <button onclick="refreshApi();">重新整理</button>
-    <form onchange="showData()">
+    <form onchange="showData(-1000)">
         <select id="howShow">
             <option value="10">10</option>
             <option value="15">15</option>
@@ -43,11 +43,9 @@
         </li>
     </ul>
 </div>
-<ul id="pages">
-        <li>prev</li>
-        <li>1</li>
-        <li>2</li>
-        <li>next</li>
+    <ul id="pages">
+        <li onclick="showData(-1)">prev</li>
+        <li onclick="showData(1)">next</li>
     </ul>
 
 

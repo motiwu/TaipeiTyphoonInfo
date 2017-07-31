@@ -40,14 +40,16 @@ var dataTitle = "";
 var dataContent = "";
 var checkedDists;
 var checkedDist;
+var arrDistData = [];
 
 const pageContainer = document.getElementById("pages");
 var totalPage = 0;
 var currentPage = 1;
 var howShow = 10;
-var arrDistData = [];
+var pageContent = "";
 
-function showData() {
+
+function showData(goPage = 0) {
     dataTitle = `<ul>
                     <li class="row title">
                         <ol>
@@ -67,6 +69,24 @@ function showData() {
     arrDistData = [];
 
 
+    currentPage += goPage;
+    if(currentPage <=0) {
+        currentPage = 1;
+    }
+
+    pageContent = `<li onclick="showData(-1)">prev</li>`;
+    for(let a = currentPage - 2; a < currentPage + 3; a++) {
+        if(a > 0) {
+            let classActive = "";
+
+            if(a == currentPage) {
+                classActive = "active";
+            }
+            pageContent += `<li class="${classActive}" onclick="showData(${a - currentPage})">${a}</li>`
+        }
+    }
+    pageContent += `<li onclick="showData(1)">next</li>`;
+
     for(let i = 0; i < checkedDists.length; i++) {
         if(checkedDists[i].checked) {
             checkedDist = checkedDists[i].value;
@@ -77,7 +97,9 @@ function showData() {
                 }
             }
 
+            totalPage = Math.ceil(arrDistData.length / howShow);
             arrDistData = arrDistData.slice(currentPage * howShow - howShow, currentPage * howShow);
+
             for(let k = 0; k < arrDistData.length; k++) {
                             dataContent += `<li class="row">
                                                 <ol>
@@ -92,4 +114,5 @@ function showData() {
             dataContainer.innerHTML = `${dataTitle}${dataContent}</ul>`;
         }
     }
+    pageContainer.innerHTML = pageContent;
 }

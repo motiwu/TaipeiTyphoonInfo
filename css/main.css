@@ -65,37 +65,42 @@ table {
   padding: 8px;
   border-radius: 4px;
   background: #f58dbd;
-  color: #eeeeee; }
+  color: #eeeeee;
+  cursor: pointer; }
 
-/* line 25, E:/git/TaipeiTyphoonInfo/css/_data.scss */
+/* line 26, E:/git/TaipeiTyphoonInfo/css/_data.scss */
 .dataContainer ul li.row ol:after {
   content: '';
   display: block;
   clear: both; }
 
-/* line 30, E:/git/TaipeiTyphoonInfo/css/_data.scss */
+/* line 31, E:/git/TaipeiTyphoonInfo/css/_data.scss */
 .dataContainer ul li.row ol li.col {
   float: left;
   width: 25%;
   line-height: 32px; }
 
-/* line 39, E:/git/TaipeiTyphoonInfo/css/_data.scss */
+/* line 40, E:/git/TaipeiTyphoonInfo/css/_data.scss */
 .dataContainer ul li.row.title ol li.col {
   line-height: 48px; }
 
-/* line 49, E:/git/TaipeiTyphoonInfo/css/_data.scss */
+/* line 50, E:/git/TaipeiTyphoonInfo/css/_data.scss */
 #pages:after {
   content: '';
   display: block;
   clear: both; }
 
-/* line 54, E:/git/TaipeiTyphoonInfo/css/_data.scss */
+/* line 55, E:/git/TaipeiTyphoonInfo/css/_data.scss */
 #pages li {
   float: left;
   margin: 4px;
   padding: 4px 8px;
   color: #eeeeee;
-  background: #404040;
-  border-radius: 4px; }
+  background: #5171a5;
+  border-radius: 4px;
+  cursor: pointer; }
+  /* line 63, E:/git/TaipeiTyphoonInfo/css/_data.scss */
+  #pages li.active {
+    background-color: #6fd0bd; }
 
 /*# sourceMappingURL=main.css.map */
